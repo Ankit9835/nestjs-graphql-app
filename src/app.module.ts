@@ -14,7 +14,7 @@ import { LessonType } from './lesson/lesson.type';
    imports: [
     TypeOrmModule.forRoot({
       type:'mongodb',
-      url: 'mongodb+srv://ankit40611:6202017915Aa@cluster0.pwu8i.mongodb.net/school?retryWrites=true&w=majority',
+      url: '',
       synchronize: true,
       useUnifiedTopology: true,
       entities:[
