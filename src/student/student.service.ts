@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import {v4 as uuid } from 'uuid'
 import { StudentType } from './student.type';
 import { StudentInput } from './student.input';
+import { In } from 'typeorm';
 
 @Injectable()
 export class StudentService {
@@ -30,4 +31,15 @@ export class StudentService {
 
         return student; // Return the created lesson
     }
+
+    async getManyStudents(studentId: string[]): Promise<StudentType[]> {
+        const students = await this.studentRepository.find({
+            where: {
+                id: In(studentId)
+            }
+        });
+        console.log(students)
+        return students;
+    }
+    
 }

@@ -23,4 +23,5 @@ export class StudentResolver {
     ) {
         return this.studentService.createStudent(createStudentInput)
     }
+
 }
